@@ -43,7 +43,7 @@ const TYPE_CONVERSIONS = "Строковое String(value) \n\
 // 0, NaN, undefined, null, '' -> false \n\
 // иначе -> true ('0', ' ' -> true) \n\
 ";
-// alert(TYPE_CONVERSIONS);
+//    alert(TYPE_CONVERSIONS);
 
 // Оператаор объединения с null
 // result = a ?? b
