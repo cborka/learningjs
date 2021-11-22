@@ -11,16 +11,16 @@
 
 // Константы
 const COLOR_BLUE = "#00F";
-const JS_TYPES =  "В JavaScript есть 8 основных типов. \n\
-\n\
-//     number для любых чисел, целочисленные значения ограничены диапазоном ±(253-1). \n\
-//     bigint для целых чисел произвольной длины, заканчивается символом n, например 12345678643431n \n\
-//     string  \n\
-//     boolean \n\
-//     null для неизвестных значений \n\
-//     undefined для неприсвоенных значений \n\
-//     object для более сложных структур данных \n\
-//     symbol для уникальных идентификаторов. ";
+const JS_TYPES =  `"В JavaScript есть 8 основных типов.
+number для любых чисел, целочисленные значения ограничены диапазоном ±(2**53-1).
+bigint для целых чисел произвольной длины, заканчивается символом n, например 12345678643431n
+string
+boolean
+null для неизвестных значений
+undefined для неприсвоенных значений
+object для более сложных структур данных
+symbol для уникальных идентификаторов. "
+`;
 //alert(JS_TYPES);
 
 // let result = prompt("Input: ", "123");
@@ -30,19 +30,19 @@ const JS_TYPES =  "В JavaScript есть 8 основных типов. \n\
 // alert (isTrue);
 
 // Преобразование типов
-const TYPE_CONVERSIONS = "Строковое String(value) \n\
-Числовое Number(value) или +value \n\
-// undefined -> NaN \n\
-// null -> 0 \n\
-// true/false -> 1/0 \n\
-// srtring -> Пробельные символы по краям обрезаются (пробел, табуляция, перевод строки), \n\
-//            пустая строка -> 0 \n\
-//            не пустая строка -> число или NaN \n\
-\n\
-Логическое Boolean(value) или !!value \n\
-// 0, NaN, undefined, null, '' -> false \n\
-// иначе -> true ('0', ' ' -> true) \n\
-";
+const TYPE_CONVERSIONS = `"Строковое String(value)
+Числовое Number(value) или +value
+undefined -> NaN
+null -> 0
+true/false -> 1/0
+srtring -> Пробельные символы по краям обрезаются (пробел, табуляция, перевод строки),
+           пустая строка -> 0
+           не пустая строка -> число или NaN
+
+Логическое Boolean(value) или !!value
+    0, NaN, undefined, null, '' -> false
+    иначе -> true ('0', ' ' -> true)
+"`;
 // alert(TYPE_CONVERSIONS);
 
 // Оператаор объединения с null
@@ -50,3 +50,7 @@ const TYPE_CONVERSIONS = "Строковое String(value) \n\
 // всё равно что
 // result = (a !== null && a !== undefined) ? a : b;
 
+// alert("typeof 10n = " + typeof 10n);
+// alert("typeof undefined = " + typeof undefined);
+alert("typeof Math  = " + typeof Math );
+//alert("typeof null = " + typeof null); // = object
