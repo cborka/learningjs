@@ -1,7 +1,154 @@
 "use strict";
 // alert ("Используется строгий режим!");
 
-objects()
+
+//numbers()
+function numbers() {
+
+//    1e3 == 1 * 1000
+
+        // toString
+//     let num = 255;
+//     alert( num.toString(16) );  // ff
+//     alert( num.toString(2) );   // 11111111
+//     alert( 123456..toString(36) ); // 2n9c // Две точки для вызова метода
+
+    // Округление
+    // Math.floor
+    // Math.ceil
+    // Math.round
+    // Math.trunc (не поддерживается в Internet Explorer)
+
+    // let num = 1.23456;
+    // alert( Math.floor(num * 100) / 100 ); // 1.23456 -> 123.456 -> 123 -> 1.23
+
+    // let num = 12.34;
+    // alert( num.toFixed(1) ); // "12.3"
+
+    // Infinity, NaN,
+    // alert( 1e500 ); // Infinity
+    // alert( 0.1 + 0.2 ); // 0.30000000000000004
+    //
+    // let sum = 0.1 + 0.2;
+    // alert( +sum.toFixed(2) ); // 0.3
+
+
+    // alert( isNaN(NaN) ); // true
+    // alert( isNaN("str") ); // true
+    // alert( NaN === NaN ); // false
+    //
+    // alert( isFinite("15") ); // true
+    // alert( isFinite("str") ); // false, потому что специальное значение: NaN
+    // alert( isFinite(Infinity) ); // false, потому что специальное значение: Infinity
+
+    // Object.is(NaN, NaN) === true
+    // Object.is(0, -0) === false
+
+    // parseInt, parseFloat
+    // alert( parseInt('100px') ); // 100
+    // alert( parseFloat('12.5em') ); // 12.5
+    //
+    // alert( parseInt('0xff', 16) ); // 255
+    // alert( parseInt('ff', 16) ); // 255, без 0x тоже работает
+    // alert( parseInt('2n9c', 36) ); // 123456
+
+    // Math
+    // alert( Math.random() ); // 0.1234567894322
+    // alert( Math.max(3, 5, -10, 0, 1) ); // 5
+    // alert( Math.min(1, 2) ); // 1
+    // alert( Math.pow(2, 10) ); // 2 в степени 10 = 1024
+}
+
+// let str = "Привет";
+// alert( str.toUpperCase() ); // ПРИВЕТ
+
+//symbols()
+function symbols() {
+
+    let id = Symbol("idDD");
+    alert(id.toString());
+    alert(id.description);
+
+
+    // Глобальные символы
+    let sym = Symbol.for("name"); // получаем символ по имени
+    alert(Symbol.keyFor(sym));         // получаем имя по символу // name
+}
+
+// Опциональная цепочка
+// let user = {}; // пользователь без адреса
+// alert( user?.address?.street ); // undefined (без ошибки)
+// delete user?.name; // Удалить user.name, если пользователь существует
+
+
+
+//this_value()
+function this_value() {
+
+
+    // function Accum(startinValue) {
+    //     this.value = startinValue;
+    //     this.read = function () {
+    //         this.value += +prompt('Add ', '1')
+    //     }
+    // }
+    // let accum = new Accum(3);
+    //
+    // accum.read()
+    // accum.read()
+    // alert(accum.value)
+
+
+    // let ladder = {
+    //     step: 0,
+    //     up() {
+    //         this.step++;
+    //         return this;
+    //     },
+    //     down() {
+    //         this.step--;
+    //         return this;
+    //     },
+    //     showStep: function() { // показывает текущую ступеньку
+    //         alert( this.step );
+    //         return this;
+    //     }
+    // };
+    // ladder.up().up().showStep().down().showStep();
+
+
+
+    // let calc = {
+    //     x: 0,
+    //     y: 0,
+    //     read () {
+    //         this.x = +prompt("Введите первый операнд: ", "2");
+    //         this.y = +prompt("Введите второй операнд: ", "3");
+    //     },
+    //     sum () {
+    //         return this.x + this.y
+    //     },
+    //     mul () {
+    //         return this.x * this.y
+    //     },
+    // }
+    // calc.read()
+    // alert(calc.mul())
+    // alert(calc.sum())
+
+
+    // function makeUser() {
+    //     return {
+    //         name: "Джон",
+    //         ref() {
+    //             return this
+    //         }
+    //     };
+    // };
+    // let user = makeUser();
+    // alert(user.ref().name);
+}
+//objects()
 function objects() {
     let user = {
         name: "Bob",
