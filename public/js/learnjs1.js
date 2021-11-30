@@ -1,6 +1,157 @@
 "use strict";
 // alert ("Используется строгий режим!");
 
+// arrays()
+//arrays2()
+//arrays3()
+
+
+alert([5, 2, 1, -10, 8].sort((a, b) => b - a))
+
+//alert(filterRange([5, 3, 8, 1], 1, 4))
+function filterRange(arr, min, max) {
+    return arr.filter((val) => val >= min && val <= max)
+}
+
+//alert(camelize('qwer-asdf-zxcv'))
+function camelize(defisString) {
+    let arr = defisString.split('-');
+    return(arr.reduce((pv, cv) => pv + cv[0].toUpperCase()+cv.slice(1), ''))
+}
+
+function arrays3() {
+    let arr = []
+
+    do {
+
+        let number = prompt('Number? ', '0')
+        if (number === null) break
+
+        arr.push(+number)
+
+    } while (true)
+
+    alert('---')
+
+    let sum = 0
+    for(let n of arr) {
+        sum += n
+    }
+
+    alert(sum)
+}
+
+
+function arrays2() {
+    let arr = ['Джаз', 'Блюз']
+    alert(arr)
+    arr.push('Рок-н-ролл')
+    alert(arr)
+    arr[Math.floor(arr.length / 2)] = 'Классика'
+    alert(arr)
+    alert(arr.shift())
+    alert(arr)
+    arr.unshift('Рэп','Рэгги')
+    alert(arr)
+
+
+}
+
+function arrays() {
+
+    //let arr = new Array();
+    //let arr = [];
+
+    let fruits = ["Яблоко", "Апельсин", "Слива"];
+    alert( fruits[0] ); // Яблоко
+    alert( fruits[1] ); // Апельсин
+    alert( fruits[2] ); // Слива
+    alert( fruits.length );
+    alert( fruits ); // Яблоко, Апельсин, Слива
+
+    // push     добавляет элемент в конец.
+    // shift    удаляет элемент в начале, сдвигая очередь, так что второй элемент становится первым.
+    // pop      удаляет последний элемент и возвращает его
+    // unshift  Добавляет элемент в начало массива
+    // можно добавлять сразу несколько элементов
+
+    // цикл по массиву
+    for (let i = 0; i < arr.length; i++) {
+        alert( arr[i] );
+    }
+    // проходит по значениям
+    for (let fruit of fruits) {
+        alert( fruit );
+    }
+    // работает как с объектом, НЕ РЕКОМЕНДУЕТСЯ
+    for (let key in arr) {
+        alert( arr[key] ); // Яблоко, Апельсин, Груша
+    }
+
+    arr.length = 2; // укорачиваем до двух элементов, операция НЕОБРАТИМА
+    arr.length = 0; // очистка массива
+
+}
+
+//strings()
+function strings() {
+    let str = `Hello`;
+
+// получаем первый символ
+    alert( str[0] ); // H
+    alert( str.charAt(0) ); // H
+
+// получаем последний символ
+    alert( str[str.length - 1] ); // o
+
+    alert( str[1000] ); // undefined
+    alert( str.charAt(1000) ); // '' (пустая строка)
+
+    // Цикл по символам строки
+    for (let char of "Hello") {
+        alert(char); // H,e,l,l,o (char — сначала "H", потом "e", потом "l" и т. д.)
+    }
+
+    alert( 'Interface'.toUpperCase() ); // INTERFACE
+    alert( 'Interface'.toLowerCase() ); // interface
+
+    // Поиск внутри строки
+    // str.indexOf(substr, pos)
+    // str.lastIndexOf(substr, position)
+
+    // Найти ВСЕ вхождения подстроки
+    //let
+        str = 'Ослик Иа-Иа посмотрел на виадук';
+    let target = 'Иа'; // цель поиска
+    let pos = 0;
+    while (true) {
+        let foundPos = str.indexOf(target, pos);
+        if (foundPos == -1)
+            break;
+        alert( `Найдено тут: ${foundPos}` );
+        pos = foundPos + 1; // продолжаем со следующей позиции
+    }
+
+    // str.includes(substr, pos) - возвращает true, если в строке str есть подстрока substr, либо false, если нет.
+    alert( "Widget".startsWith("Wid") ); // true, "Wid" — начало "Widget"
+    alert( "Widget".endsWith("get") ); // true, "get" — окончание "Widget"
+
+    // 3 метода для получения подстроки: substring, substr и slice
+    // slice(start, end)	    от start до end (не включая end)	можно передавать отрицательные значения
+    // substring(start, end)	между start и end	                отрицательные значения равнозначны 0
+    // substr(start, length)	length символов, начиная от start	значение start может быть отрицательным
+
+// Отрицательные параметры - начинаем с позиции 4 справа, а заканчиваем на позиции 1 справа
+// alert( "stringify".slice(-4, -1) ); // gif
+
+    // str.codePointAt(pos)       - Возвращает код для символа, находящегося на позиции pos
+    // String.fromCodePoint(code) - Создаёт символ по его коду code
+
+    // str.localeCompare(str2) - возвращает число (1, 0, -1), которое показывает, какая строка больше в соответствии с правилами языка
+
+    alert( 'S\u0307' ); // Ṡ
+
+}
 
 //numbers()
 function numbers() {
